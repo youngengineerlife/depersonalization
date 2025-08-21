@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Young  Engineer  Life</title>
+    <title>Young Engineer Life</title>
     <style>
         @font-face {
             font-family: 'CustomFont';
@@ -21,51 +21,31 @@
             min-height: 100vh;
             font-family: 'CustomFont', Arial, sans-serif;
             overflow-x: hidden;
+            padding: 20px;
         }
         .title {
-            font-size: clamp(1.5rem, 6vw, 4rem);
+            font-size: 3.5rem;
             font-weight: bold;
             text-align: center;
-            position: absolute;
-            top: 4rem;
-            left: 50%;
-            transform: translateX(-50%);
+            margin-top: 30px;
+            margin-bottom: 80px;
             color: black;
             letter-spacing: 0em;
             line-height: 0.9;
             filter: blur(0.9px);
-            margin: 0;
         }
         .gif-container {
-            max-width: 250px;
-            max-height: 80px;
+            width: 200px;
+            height: 60px;
             overflow: hidden;
             margin: 0 auto;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
         }
         .gif-container img {
             width: 100%;
             height: auto;
             display: block;
             position: relative;
-            top: -27px;
-        }
-        @media (max-width: 768px) {
-            .title {
-                margin-bottom: 2rem;
-            }
-            
-            .gif-container {
-                max-width: 200px;
-                max-height: 80px;
-            }
-            
-            .gif-container img {
-                top: -40px;
-            }
+            top: -30px;
         }
     </style>
 </head>
