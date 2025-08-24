@@ -33,9 +33,8 @@
             font-size: 2.5rem;
             font-weight: bold;
             text-align: left;
-            margin-top: 15px;
-            margin-bottom: 40px;
-            padding: 10px 0;
+            margin: 0;
+            padding: 0;
             color: black;
             letter-spacing: 0em;
             line-height: 1.3;
@@ -44,7 +43,7 @@
             width: 100%;
             height: 1px;
             background-color: black;
-            margin-bottom: 40px;
+            margin: 5px 0 40px 0;
         }
         .gif-container {
             width: 130px;
@@ -95,9 +94,25 @@
     <div class="gif-underline"></div>
     
     <nav class="nav-menu">
-        <a href="#" class="nav-item active">Home</a>
-        <a href="#" class="nav-item">Blog</a>
-        <a href="#" class="nav-item">Socials</a>
+        <a href="#home" class="nav-item" onclick="setActive(this)">Home</a>
+        <a href="#blog" class="nav-item" onclick="setActive(this)">Blog</a>
+        <a href="#socials" class="nav-item" onclick="setActive(this)">Socials</a>
     </nav>
+
+    <script>
+        function setActive(clickedItem) {
+            // Remove active class from all nav items
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            // Add active class to clicked item
+            clickedItem.classList.add('active');
+        }
+        
+        // Set Home as active on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.nav-item').classList.add('active');
+        });
+    </script>
 </body>
 </html>
