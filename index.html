@@ -106,7 +106,7 @@
             display: block;
             text-decoration: none;
             color: black;
-            border: 1px solid #ddd;
+            border: none;
             border-radius: 0;
             overflow: hidden;
             background: transparent;
@@ -152,10 +152,10 @@
     <div class="gif-underline"></div>
 
     <nav class="nav-menu">
-        <a href="#home" class="nav-item" onclick="setActive(this)">Home</a>
-        <a href="#blog" class="nav-item" onclick="setActive(this)">Blog</a>
-        <a href="#moodboard" class="nav-item" onclick="setActive(this)">Moodboard</a>
-        <a href="#socials" class="nav-item" onclick="setActive(this)">Games</a>
+        <a href="#home" class="nav-item" onclick="setActive(this, event)">Home</a>
+        <a href="#blog" class="nav-item" onclick="setActive(this, event)">Blog</a>
+        <a href="#moodboard" class="nav-item" onclick="setActive(this, event)">Moodboard</a>
+        <a href="#socials" class="nav-item" onclick="setActive(this, event)">Games</a>
     </nav>
 
     <section id="home" class="page-section">
@@ -184,7 +184,8 @@
     </section>
 
     <script>
-        function setActive(clickedItem) {
+        function setActive(clickedItem, event) {
+            if (event) event.preventDefault();
             // Remove active class from all nav items
             document.querySelectorAll('.nav-item').forEach(item => {
                 item.classList.remove('active');
