@@ -26,7 +26,8 @@
             background: #87CEEB;
             min-height: 100vh;
             font-family: Arial, sans-serif;
-            transform: scaleY(1.1);
+            font-weight: 400;
+            transform: scaleY(1.25);
             transform-origin: top;
             overflow-x: hidden;
             padding: 20px;
@@ -34,7 +35,7 @@
         .title {
             font-family: Arial, sans-serif;
             font-size: 2.5rem;
-            font-weight: bold;
+            font-weight: 500;
             text-align: left;
             margin: 0 0 3px 0;
             padding: 0 0 0 5px;
@@ -49,8 +50,8 @@
             margin: 0 0 10px 0;
         }
         .gif-container {
-            width: 130px;
-            height: 40px;
+            width: 165px;
+            height: 50px;
             overflow: hidden;
             margin: 0 auto;
         }
@@ -59,10 +60,10 @@
             height: auto;
             display: block;
             position: relative;
-            top: -18px;
+            top: -22px;
         }
         .gif-underline {
-            width: 130px;
+            width: 165px;
             height: 1px;
             background-color: black;
             margin: 10px auto 20px auto;
@@ -108,7 +109,7 @@
             border: 1px solid #ddd;
             border-radius: 0;
             overflow: hidden;
-            background: white;
+            background: transparent;
             transition: transform 0.15s ease;
         }
         .game-card:hover {
@@ -116,24 +117,20 @@
         }
         .game-card img {
             width: 100%;
+            max-width: 630px;
+            aspect-ratio: 630 / 500;
             display: block;
-            aspect-ratio: 4 / 3;
             object-fit: cover;
             border-radius: 0;
-        }
-        .game-info {
-            padding: 12px;
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
+            margin: 0 auto;
         }
         .game-title {
+            display: block;
             font-family: Arial, sans-serif;
             font-weight: bold;
-        }
-        .game-subtitle {
-            font-size: 0.85rem;
-            color: #555;
+            text-decoration: underline;
+            text-align: center;
+            margin-top: 8px;
         }
 
         /* Mobile: vertical scroll, full-width post-style cards */
@@ -142,14 +139,11 @@
                 grid-template-columns: 1fr;
                 gap: 16px;
             }
-            .game-card img {
-                aspect-ratio: 16 / 9;
-            }
         }
     </style>
 </head>
 <body>
-    <h1 class="title">rumani.</h1>
+    <h1 class="title">Yel</h1>
     <div class="title-underline"></div>
 
     <div class="gif-container">
@@ -180,17 +174,11 @@
         <div class="games-gallery">
             <a class="game-card" href="https://execelia.itch.io/espionage" target="_blank" rel="noopener">
                 <img src="https://img.itch.zone/aW1nLzI3MzE0MjcyLnBuZw==/original/88sr46.png" alt="ESPIONAGE cover">
-                <div class="game-info">
-                    <span class="game-title">ESPIONAGE</span>
-                    <span class="game-subtitle">Espionage: Azurium Files</span>
-                </div>
+                <span class="game-title">ESPIONAGE</span>
             </a>
             <a class="game-card" href="https://execelia.itch.io/memorabilia" target="_blank" rel="noopener">
                 <img src="https://img.itch.zone/aW1nLzI0MDc2Mzc0LnBuZw==/original/gwQOJp.png" alt="Memorabilia cover">
-                <div class="game-info">
-                    <span class="game-title">Memorabilia</span>
-                    <span class="game-subtitle">a dreamscape</span>
-                </div>
+                <span class="game-title">Memorabilia</span>
             </a>
         </div>
     </section>
