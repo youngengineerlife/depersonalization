@@ -79,6 +79,69 @@
         .nav-item.active {
             font-weight: bold;
         }
+
+        /* Page sections */
+        .page-section {
+            max-width: 1000px;
+            margin: 30px auto 0;
+        }
+        .section-heading {
+            font-family: 'MenuFont', Arial, sans-serif;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+
+        /* Desktop: gallery grid */
+        .games-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .game-card {
+            display: block;
+            text-decoration: none;
+            color: black;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+            transition: transform 0.15s ease;
+        }
+        .game-card:hover {
+            transform: translateY(-4px);
+        }
+        .game-card img {
+            width: 100%;
+            display: block;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+        }
+        .game-info {
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .game-title {
+            font-family: 'MenuFont', Arial, sans-serif;
+            font-weight: bold;
+        }
+        .game-subtitle {
+            font-size: 0.85rem;
+            color: #555;
+        }
+
+        /* Mobile: vertical scroll, full-width post-style cards */
+        @media (max-width: 600px) {
+            .games-gallery {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .game-card img {
+                aspect-ratio: 16 / 9;
+            }
+        }
     </style>
 </head>
 <body>
@@ -97,6 +160,38 @@
         <a href="#socials" class="nav-item" onclick="setActive(this)">Socials</a>
     </nav>
 
+    <section id="home" class="page-section">
+        <p>Welcome to my corner of the internet.</p>
+    </section>
+
+    <section id="blog" class="page-section" style="display:none;">
+        <p>Blog coming soon.</p>
+    </section>
+
+    <section id="moodboard" class="page-section" style="display:none;">
+        <p>Moodboard coming soon.</p>
+    </section>
+
+    <section id="socials" class="page-section" style="display:none;">
+        <h2 class="section-heading">Games</h2>
+        <div class="games-gallery">
+            <a class="game-card" href="https://execelia.itch.io/espionage" target="_blank" rel="noopener">
+                <img src="https://img.itch.zone/aW1nLzI3MzE0MjcyLnBuZw==/original/88sr46.png" alt="ESPIONAGE cover">
+                <div class="game-info">
+                    <span class="game-title">ESPIONAGE</span>
+                    <span class="game-subtitle">Espionage: Azurium Files</span>
+                </div>
+            </a>
+            <a class="game-card" href="https://execelia.itch.io/memorabilia" target="_blank" rel="noopener">
+                <img src="https://img.itch.zone/aW1nLzI0MDc2OTgyLnBuZw==/original/E35Bc1.png" alt="Memorabilia cover">
+                <div class="game-info">
+                    <span class="game-title">Memorabilia</span>
+                    <span class="game-subtitle">a dreamscape</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
     <script>
         function setActive(clickedItem) {
             // Remove active class from all nav items
@@ -105,6 +200,13 @@
             });
             // Add active class to clicked item
             clickedItem.classList.add('active');
+
+            // Hide all sections, show the matching one
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            const target = document.querySelector(clickedItem.getAttribute('href'));
+            if (target) target.style.display = 'block';
         }
 
         // Set Home as active on page load
