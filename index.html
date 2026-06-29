@@ -96,6 +96,30 @@
             font-size: 1.4rem;
         }
 
+        /* Home page layout: text left, image right */
+        .home-layout {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        .home-text {
+            flex: 1;
+        }
+        .home-image {
+            flex: 1;
+            max-width: 400px;
+            width: 100%;
+            display: block;
+        }
+        @media (max-width: 600px) {
+            .home-layout {
+                flex-direction: column;
+            }
+            .home-image {
+                max-width: 100%;
+            }
+        }
+
         /* Desktop: gallery grid */
         .games-gallery {
             display: grid;
@@ -143,7 +167,7 @@
     </style>
 </head>
 <body>
-    <h1 class="title">rumani.</h1>
+    <h1 class="title">Yel</h1>
     <div class="title-underline"></div>
 
     <div class="gif-container">
@@ -159,7 +183,10 @@
     </nav>
 
     <section id="home" class="page-section">
-        <p>Welcome to my corner of the internet.</p>
+        <div class="home-layout">
+            <img src="sunmantwo.png" alt="Sunman" class="home-image">
+            <p class="home-text">Welcome to my corner of the internet.</p>
+        </div>
     </section>
 
     <section id="blog" class="page-section" style="display:none;">
@@ -207,4 +234,4 @@
         });
     </script>
 </body>
-</html>
+</html> 
