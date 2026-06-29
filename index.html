@@ -95,6 +95,12 @@
             margin-bottom: 20px;
             font-size: 1.4rem;
         }
+        .section-underline {
+            width: 100%;
+            height: 1px;
+            background-color: black;
+            margin: 20px 0 0 0;
+        }
 
         /* Home page layout: text left, image right */
         .home-layout {
@@ -103,20 +109,24 @@
             gap: 30px;
         }
         .home-text {
-            flex: 1;
+            flex: 2;
         }
         .home-image {
             flex: 1;
-            max-width: 400px;
+            max-width: 180px;
             width: 100%;
             display: block;
         }
         @media (max-width: 600px) {
             .home-layout {
-                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
             }
             .home-image {
-                max-width: 100%;
+                max-width: 100px;
+            }
+            .home-text {
+                font-size: 0.9rem;
             }
         }
 
@@ -167,7 +177,7 @@
     </style>
 </head>
 <body>
-    <h1 class="title">Yel</h1>
+    <h1 class="title">rumani.</h1>
     <div class="title-underline"></div>
 
     <div class="gif-container">
@@ -187,14 +197,17 @@
             <img src="sunmantwo.png" alt="Sunman" class="home-image">
             <p class="home-text">Welcome to my corner of the internet.</p>
         </div>
+        <div class="section-underline"></div>
     </section>
 
     <section id="blog" class="page-section" style="display:none;">
         <p>Blog coming soon.</p>
+        <div class="section-underline"></div>
     </section>
 
     <section id="moodboard" class="page-section" style="display:none;">
         <p>Moodboard coming soon.</p>
+        <div class="section-underline"></div>
     </section>
 
     <section id="socials" class="page-section" style="display:none;">
@@ -208,6 +221,7 @@
                 <span class="game-title">Memorabilia</span>
             </a>
         </div>
+        <div class="section-underline"></div>
     </section>
 
     <script>
@@ -234,4 +248,4 @@
         });
     </script>
 </body>
-</html> 
+</html>
