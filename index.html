@@ -105,11 +105,12 @@
         /* Home page layout: text left, image right */
         .home-layout {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 30px;
         }
         .home-text {
             flex: 2;
+            margin-top: 12px;
         }
         .home-image {
             flex: 1;
@@ -119,7 +120,6 @@
         }
         @media (max-width: 600px) {
             .home-layout {
-                align-items: flex-start;
                 gap: 15px;
             }
             .home-image {
@@ -177,7 +177,7 @@
     </style>
 </head>
 <body>
-    <h1 class="title">rumani.</h1>
+    <h1 class="title">Rumani.</h1>
     <div class="title-underline"></div>
 
     <div class="gif-container">
